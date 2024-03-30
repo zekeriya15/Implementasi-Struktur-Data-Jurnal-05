@@ -10,7 +10,7 @@ public class ToDoList {
         boolean run = true;
 
         while(run) {
-            System.out.println("Pilih operasi: \n1. Tambahkan tugas \n2. Tampilkan tugas sesuai urutan \n3. Hapus tugas \n4. Tampilkan seluruh isi to-do list \n5. keluar");
+            System.out.println("Pilih operasi: \n1. Tambahkan tugas \n2. Tampilkan tugas pertama \n3. Hapus tugas \n4. Tampilkan seluruh isi to-do list \n5. keluar");
             
             int pilihan = s.nextInt();
             s.nextLine();
@@ -23,9 +23,16 @@ public class ToDoList {
                     queue.enqueue(tugas);
                     System.out.println("Tugas " + tugas + " berhasilkan ditambahkan ke to-do list");
                 break;
-                case 2: 
-                    queue.printQueue();
-                    System.out.println();
+                case 2:
+                    queue.printTugas1();
+                break;
+                case 4:
+                    if(queue.isEmpty()) {
+                        System.out.println("To-Do list kosong");
+                    } else {
+                        queue.printQueue();
+                        System.out.println();
+                    }  
                 break;
                 case 3:
                     if(queue.isEmpty()) {

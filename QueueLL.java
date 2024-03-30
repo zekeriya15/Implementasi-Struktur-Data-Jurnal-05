@@ -36,4 +36,8 @@ public class QueueLL<E> {
             
         }
     }
+
+    public void printTugas1 () {
+        System.out.println(queueList.peek());
+    }
 }
